@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logic Circuit Visualiser</title>
+  <script type="module" crossorigin src="/Logic-Circuit/assets/index-C57tZEPF.js"></script>
+  <link rel="stylesheet" crossorigin href="/Logic-Circuit/assets/index-CMZF3TSV.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Left Panel (Title + Gate Information) -->
+    <aside id="left-panel">
+      <!-- Title Section -->
+      <div id="title-section">
+        <h1>Logic Circuit Visualiser</h1>
+        <p>Build and test your own logic circuits interactively!</p>
+      </div>
+
+      <!-- Gate Information Panel -->
+      <div id="info-panel">
+        <h3>Gate Information</h3>
+        <ul>
+          <li><span class="info-icon">ℹ️</span> <strong>AND:</strong> Outputs TRUE only if both inputs are TRUE.</li>
+          <li><span class="info-icon">ℹ️</span> <strong>OR:</strong> Outputs TRUE if at least one input is TRUE.</li>
+          <li><span class="info-icon">ℹ️</span> <strong>NOT:</strong> Inverts the input signal (TRUE → FALSE, FALSE → TRUE).</li>
+          <li><span class="info-icon">ℹ️</span> <strong>XOR:</strong> Outputs TRUE if only one input is TRUE.</li>
+          <li><span class="info-icon">ℹ️</span> <strong>SWITCH:</strong> Manually toggles between TRUE (ON) and FALSE (OFF).</li>
+          <li><span class="info-icon">ℹ️</span> <strong>BULB:</strong> Lights up if it receives a TRUE signal.</li>
+        </ul>
+      </div>
+    </aside>
+
+    <div id="workspace-container">
+      <div id="components-header">
+          <h2 id="components-title">Available Components</h2>
+      </div>
+      <aside id="workspace">
+          <div class="component-container">
+              <div class="gate-template" draggable="true" data-type="AND">AND</div>
+              <div class="gate-template" draggable="true" data-type="OR">OR</div>
+              <div class="gate-template" draggable="true" data-type="NOT">NOT</div>
+              <div class="gate-template" draggable="true" data-type="XOR">XOR</div>
+              <div class="gate-template" draggable="true" data-type="SWITCH">SWITCH</div>
+              <div class="gate-template" draggable="true" data-type="BULB">BULB</div>
+          </div>
+      </aside>
+  </div>
+  
+    
+    
+    
+    
+    
+    <!-- Canvas for Building Circuits -->
+    <section id="canvas" aria-label="Logic Circuit Canvas">
+      <p id="canvas-placeholder">Drag and drop gates and components here to start building your circuit.</p>
+    </section>
+
+    <!-- Instructions Section -->
+    <aside id="instructions">
+      <h4>How to Use</h4>
+      <ul>
+        <li>Drag gates and components from the left panel to the canvas.</li>
+        <li>Click and drag between gates to create connections.</li>
+        <li>Click the switch to toggle its state.</li>
+        <li>Reposition components by dragging them within the canvas.</li>
+      </ul>
+      <!-- Buttons -->
+      <button id="reset-button">Reset Circuit</button>
+      <button id="save-button">Save Circuit</button>
+      <button id="load-button">Load Circuit</button>
+
+    </aside>
+  </div>
+
+</body>
+</html>
