@@ -15,7 +15,8 @@ An interactive web-based tool for designing and simulating logic circuits. Users
 - **Hosting:** Vercel (live demo link below)
 
 ## 🔹 Live Demo
-[👉 Click here to try it out](#) (To be updated after deployment)
+[👉 https://belle-wills.github.io/Logic-Circuit/ 
+as GitHub Pages is a static site hosting service that isn't compatible for my backend, it currently isn't running. However, I'm happy to show a video demo of the backend working (saving and loading data) until both frontend and backend are fully published on a different site, that is compatible for both. 
 
 ## 🔹 Installation & Usage
 1. Clone the repository:
