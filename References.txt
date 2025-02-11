@@ -1,0 +1,21 @@
+References I used to help me build the Logic Circuit Visualser. 
+
+
+https://expressjs.com - helped with backend
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API - Used in the frontend for making API calls
+https://nodejs.org/api/fs.html – Used for saving and loading circuit data
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes - Used to structure Gate, LightBulb, Switch as separate components
+https://www.electronics-tutorials.ws/logic/logic-gates.html – Understanding logic gates
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API - – Used for making components draggable
+https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events - Used for triggering circuit updates
+
+ https://react.dev/reference/react/useEffect 
+ https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch -React useEffect & Fetch Docs – For handling API requests and saving/loading circuits
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atan2 - Calculating wire angles
+https://developer.mozilla.org/en-US/docs/Web/CSS/transition - Wire animations
+
+
+

@@ -1,0 +1,42 @@
+{
+  "gates": [
+    {
+      "id": "and-0",
+      "type": "AND",
+      "position": {
+        "x": 240,
+        "y": 86
+      }
+    },
+    {
+      "id": "switch-1",
+      "type": "SWITCH",
+      "position": {
+        "x": 343,
+        "y": 207
+      }
+    },
+    {
+      "id": "bulb-2",
+      "type": "BULB",
+      "position": {
+        "x": 203,
+        "y": 210
+      }
+    }
+  ],
+  "wires": [
+    {
+      "start": "switch-1",
+      "end": "and-0"
+    },
+    {
+      "start": "and-0",
+      "end": "bulb-2"
+    },
+    {
+      "start": "switch-1",
+      "end": "bulb-2"
+    }
+  ]
+}

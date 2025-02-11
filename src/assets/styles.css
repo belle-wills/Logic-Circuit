@@ -1,0 +1,372 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* App Container */
+#app {
+  width: 90%;
+  height: 90%;
+  border: 1px solid #ddd; /* Thinner border */
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Left Panel (Title + Gate Information) */
+#left-panel {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  border-right: 1px solid #ddd; /* Thinner border */
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
+/* Title Section */
+#title-section {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+#title-section h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+#title-section p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Info Panel */
+#info-panel {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0px;
+  border: 1px solid #ddd; /* Thinner border */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  line-height: 1.6;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#info-panel h3 {
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#info-panel ul {
+  list-style: none;
+  padding: 5px;
+}
+
+#info-panel li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+}
+
+/* Info Icons */
+.info-icon {
+  font-size: 18px;
+  cursor: help;
+  color: blue;
+}
+
+.info-icon:hover {
+  color: darkblue;
+}
+
+/* Flex container for title and workspace */
+#workspace-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns both the title and workspace */
+  width: 20%;
+}
+
+/* title placement */
+#components-header {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;  /* Adds vertical padding */
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  margin-bottom: 5px; /* Add space between title and gates */
+}
+
+/* Workspace (Gate Selection) */
+#workspace {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Ensures components are stacked properly */
+  padding-top: 10px; /* Increase spacing from the top */
+  background-color: #fdfdfd;
+  gap: 12px; /* Adds spacing between gates */
+  height: 100vh;
+}
+
+/* Component Selection Layout */
+.component-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 0; 
+}
+
+/* Gate Templates */
+.gate-template {
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #444; /* thin border */
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  cursor: grab;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  margin: 20px 0; /*vertical spacing */
+}
+
+.gate-template:hover {
+  transform: scale(1.1);
+  background-color: #d4d4d4;
+  border-color: #007bff;
+}
+
+/* Canvas for Gates */
+#canvas {
+  flex-grow: 1;
+  position: relative;
+  height: calc(100% - 40px);
+  border: 1px dashed #aaa; /* Thinner border */
+  background-color: #fdfdfd;
+  margin: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Placeholder Text */
+#canvas-placeholder {
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+}
+
+/* Gates on Canvas */
+.gate {
+  width: 60px;
+  height: 40px;
+  margin: 5px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #444; /* Thinner border */
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  position: relative;
+}
+
+.gate:hover {
+  transform: scale(1.1);
+  border-color: #007bff;
+  background-color: #eef;
+}
+
+.gate.dragging {
+  opacity: 0.6;
+  border: 1px dashed #444; /* Thinner border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Terminals (for connecting gates) */
+.input-terminal,
+.output-terminal {
+  width: 10px;
+  height: 10px;
+  background-color: #444;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.input-terminal {
+  left: -12px;
+}
+
+.input-terminal:first-child {
+  top: 5px;
+}
+
+.input-terminal:last-child {
+  bottom: 5px;
+}
+
+.output-terminal {
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-terminal:hover,
+.output-terminal:hover {
+  background-color: #007bff;
+  cursor: crosshair;
+  box-shadow: 0 0 5px #007bff;
+}
+
+/* Wire Styling */
+.wire {
+  position: absolute;
+  height: 1px; /* Thinner wire */
+  background-color: rgb(0, 141, 197);
+  pointer-events: none;
+  z-index: 1;
+}
+.wire {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw-wire 0.5s linear forwards;
+}
+
+@keyframes draw-wire {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.wire {
+  stroke: #00ddff; /* Green color */
+  filter: drop-shadow(0 0 4px #00ddff);
+  transition: filter 0.5s ease-in-out;
+}
+
+.wire-preview {
+  position: absolute;
+  height: 1px; /* Thinner wire */
+  background-color: red;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+#instructions {
+  width: 20%; /* Keep it within the right panel */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-left: 1px solid #ddd;
+  font-size: 14px;
+  line-height: 1.6;
+
+  /* Positioned inside the rightmost panel */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+  text-align: center;
+  height: 100vh; /* Make it take up the full height */
+
+  /* Make sure it stays inside the last panel */
+  position: relative;
+}
+
+
+#instructions h4 {
+  margin-top: -30px;
+  color: #333;
+}
+
+#instructions ul {
+  padding-left: 20px;
+}
+
+#instructions li {
+  margin-bottom: 10px;
+}
+
+/* Light Bulb */
+.lightbulb {
+  width: 40px;
+  height: 60px;
+  background-color: #888;
+  border-radius: 50%;
+  border: 1px solid #444; /* Thinner border */
+  position: absolute;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lightbulb.on {
+  background-color: rgb(255, 217, 0);
+  box-shadow: 0 0 20px yellow;
+}
+
+.lightbulb.off {
+  background-color: #888;
+}
+
+/* Switch */
+.switch {
+  width: auto;
+  min-width: 60px;
+  height: 30px;
+  padding: 0 10px;
+  background-color: #aaa;
+  border: 1px solid #444; /* Thinner border */
+  border-radius: 10px;
+  position: absolute;
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.switch.on {
+  background-color: rgb(0, 166, 108);
+}
+
+.switch.off {
+  background-color: rgb(215, 1, 1);
+}
